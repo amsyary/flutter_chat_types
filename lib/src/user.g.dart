@@ -8,7 +8,7 @@ part of 'user.dart';
 
 User _$UserFromJson(Map<String, dynamic> json) => User(
       createdAt: json['createdAt'] as int?,
-      firstName: json['firstName'] as String?,
+      displayName: json['displayName'] as String?,
       id: json['id'] as String,
       imageUrl: json['imageUrl'] as String?,
       lastName: json['lastName'] as String?,
@@ -28,7 +28,7 @@ Map<String, dynamic> _$UserToJson(User instance) {
   }
 
   writeNotNull('createdAt', instance.createdAt);
-  writeNotNull('firstName', instance.firstName);
+  writeNotNull('displayName', instance.displayName);
   val['id'] = instance.id;
   writeNotNull('imageUrl', instance.imageUrl);
   writeNotNull('lastName', instance.lastName);
@@ -44,4 +44,5 @@ const _$RoleEnumMap = {
   Role.agent: 'agent',
   Role.moderator: 'moderator',
   Role.user: 'user',
+  Role.doctor: 'doctor',
 };

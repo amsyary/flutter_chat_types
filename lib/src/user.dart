@@ -5,7 +5,7 @@ import 'package:meta/meta.dart';
 part 'user.g.dart';
 
 /// All possible roles user can have.
-enum Role { admin, agent, moderator, user }
+enum Role { admin, agent, moderator, user, doctor }
 
 /// A class that represents user.
 @JsonSerializable()
@@ -14,7 +14,7 @@ class User extends Equatable {
   /// Creates a user.
   const User({
     this.createdAt,
-    this.firstName,
+    this.displayName,
     required this.id,
     this.imageUrl,
     this.lastName,
@@ -37,7 +37,7 @@ class User extends Equatable {
   /// both metadatas will be merged into one Map, where keys from a passed
   /// metadata will overwite keys from the previous one.
   User copyWith({
-    String? firstName,
+    String? displayName,
     String? imageUrl,
     String? lastName,
     int? lastSeen,
@@ -46,7 +46,7 @@ class User extends Equatable {
     int? updatedAt,
   }) {
     return User(
-      firstName: firstName,
+      displayName: displayName,
       id: id,
       imageUrl: imageUrl,
       lastName: lastName,
@@ -66,7 +66,7 @@ class User extends Equatable {
   @override
   List<Object?> get props => [
         createdAt,
-        firstName,
+        displayName,
         id,
         imageUrl,
         lastName,
@@ -80,7 +80,7 @@ class User extends Equatable {
   final int? createdAt;
 
   /// First name of the user
-  final String? firstName;
+  final String? displayName;
 
   /// Unique ID of the user
   final String id;
