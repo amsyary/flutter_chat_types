@@ -43,7 +43,7 @@ Map<String, dynamic> _$FileMessageToJson(FileMessage instance) {
   writeNotNull('repliedMessage', instance.repliedMessage?.toJson());
   writeNotNull('roomId', instance.roomId);
   writeNotNull('status', _$StatusEnumMap[instance.status]);
-  val['type'] = _$MessageTypeEnumMap[instance.type];
+  val['type'] = _$MessageTypeEnumMap[instance.type]!;
   writeNotNull('updatedAt', instance.updatedAt);
   writeNotNull('mimeType', instance.mimeType);
   val['name'] = instance.name;

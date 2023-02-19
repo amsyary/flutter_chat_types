@@ -13,7 +13,6 @@ enum Role { admin, agent, moderator, user, doctor }
 class User extends Equatable {
   /// Creates a user.
   const User({
-    this.createdAt,
     this.displayName,
     required this.id,
     this.imageUrl,
@@ -65,7 +64,6 @@ class User extends Equatable {
   /// Equatable props
   @override
   List<Object?> get props => [
-        createdAt,
         displayName,
         id,
         imageUrl,
@@ -75,9 +73,6 @@ class User extends Equatable {
         role,
         updatedAt
       ];
-
-  /// Created user timestamp, in ms
-  final int? createdAt;
 
   /// First name of the user
   final String? displayName;

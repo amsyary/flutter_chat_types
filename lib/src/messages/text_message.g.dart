@@ -43,7 +43,7 @@ Map<String, dynamic> _$TextMessageToJson(TextMessage instance) {
   writeNotNull('repliedMessage', instance.repliedMessage?.toJson());
   writeNotNull('roomId', instance.roomId);
   writeNotNull('status', _$StatusEnumMap[instance.status]);
-  val['type'] = _$MessageTypeEnumMap[instance.type];
+  val['type'] = _$MessageTypeEnumMap[instance.type]!;
   writeNotNull('updatedAt', instance.updatedAt);
   writeNotNull('previewData', instance.previewData?.toJson());
   val['text'] = instance.text;
